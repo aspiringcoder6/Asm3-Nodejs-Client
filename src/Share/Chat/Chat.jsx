@@ -6,7 +6,9 @@ import ChatRoomsAPI from "../../API/ChatRoomsAPI";
 import { useSelector } from "react-redux";
 import io from "socket.io-client";
 
-const socket = io("https://asm3-nodejs-backend.onrender.com");
+const socket = io("https://asm3-nodejs-backend.onrender.com", {
+  transports: ["websocket"],
+});
 
 function Chat(props) {
   const [activeChat, setActiveChat] = useState(false);
